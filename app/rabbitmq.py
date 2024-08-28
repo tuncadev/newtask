@@ -1,5 +1,7 @@
 import aio_pika
 import asyncio
+from .websocket_manager import manager
+
 
 async def send_notification(order):
     connection = await aio_pika.connect_robust("amqp://guest:guest@localhost/")
@@ -15,4 +17,6 @@ async def send_notification(order):
         routing_key=queue.name,
     )
 
+    await manager.broadcast(message_body)
     await connection.close()
+

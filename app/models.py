@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String, Float
 from .database import Base
 
 class Order(Base):
@@ -12,5 +11,3 @@ class Order(Base):
     client_email = Column(String, index=True)
     status = Column(String, default="Pending")
     total_price = Column(Float)
-
-    # You can add more fields like timestamps, etc.

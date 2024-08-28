@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+httpx
+pytest
+python-dotenv
+aio-pika
+pymongo
+psycopg2-binary
